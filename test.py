@@ -64,5 +64,4 @@ class MyTestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-	unittest.TestLoader.sortTestMethodsUsing = lambda *args: -1
 	unittest.main()
