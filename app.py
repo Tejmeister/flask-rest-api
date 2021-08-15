@@ -9,7 +9,6 @@ app = Flask(__name__)
 app.config["PROPAGATE_EXCEPTIONS"] = True
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
 api = Api(app=app)
 api.add_resource(Item, "/item/<string:name>")
 api.add_resource(ItemList, "/items")
