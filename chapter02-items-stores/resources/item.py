@@ -1,6 +1,5 @@
 from flask_restful import Resource, request
 from marshmallow import ValidationError
-from flasgger import SwaggerView
 
 from models.item import ItemModel
 from schemas.item import ItemSchema
@@ -10,9 +9,9 @@ item_list_schema = ItemSchema(many=True)
 
 
 class Item(Resource):
+
 	@classmethod
 	def get(cls, name: str):
-
 		item = ItemModel.find_by_name(name=name)
 		if item:
 			return item_schema.dump(item), 200
