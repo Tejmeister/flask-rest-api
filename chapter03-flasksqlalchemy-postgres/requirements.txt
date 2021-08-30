@@ -1,0 +1,12 @@
+flasgger
+Flask
+Flask-JWT
+Flask-JWT-Extended
+flask-marshmallow
+Flask-RESTful
+Flask-SQLAlchemy
+marshmallow
+marshmallow-sqlalchemy
+SQLAlchemy
+python-dotenv
+flask-migrate

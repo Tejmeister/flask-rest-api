@@ -1,10 +1,8 @@
-import unittest
+from unittest import TestCase, unittest
+from app import app, db
 
-from app import app, db, ma
 
-
-class MyTestCase(unittest.TestCase):
-
+class MyTestCase(TestCase):
 	@classmethod
 	def setUpClass(cls) -> None:
 		app.config["TESTING"] = True
@@ -34,14 +32,12 @@ class MyTestCase(unittest.TestCase):
 		self.assertDictEqual(response.get_json(), items)
 
 	def test_03_post_one_chair(self):
-		response = self.app.post("/item/chair", json={"price": "15.67"},
-								 follow_redirects=True)
+		response = self.app.post("/item/chair", json={"price": "15.67"}, follow_redirects=True)
 		self.assertDictEqual(response.json, {'id': 1, 'name': 'chair', 'price': 15.67})
 
 	# @unittest.SkipTest
 	def test_04_post_one_table(self):
-		response = self.app.post("/item/table", json={"price": "6.2"},
-								 follow_redirects=True)
+		response = self.app.post("/item/table", json={"price": "6.2"}, follow_redirects=True)
 		self.assertDictEqual(response.json, {'id': 2, 'name': 'table', 'price': 6.2})
 
 	def test_05_get_table(self):
