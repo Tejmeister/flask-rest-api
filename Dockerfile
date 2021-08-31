@@ -4,5 +4,6 @@ WORKDIR /app
 COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 COPY . /app
-CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0"]
+ENTRYPOINT ["python"]
+CMD ["-m" , "flask", "run", "--host=0.0.0.0"]
 
