@@ -13,6 +13,6 @@ services:
       - SQLALCHEMY_DATABASE_URI=${SQLALCHEMY_DATABASE_URI}
       - FLASK_APP=app.py
     ports:
-      - 5000:5000
+      - "5000:5000"
     volumes:
       - .:/app
